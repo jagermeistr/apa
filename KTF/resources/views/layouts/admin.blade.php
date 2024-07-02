@@ -25,7 +25,7 @@
 
 <body>
     <div class="container-scroller">
-        <x-layouts.inc.admin.navbar/>
+        <x-layouts.inc.admin.navbar>
         <div class="container-fluid page-body-wrapper">
             <x-layouts.inc.admin.sidebar />
         </div>
@@ -59,4 +59,4 @@
     <script src="{{asset ('admin/js/jquery.cookie.js" type="text/javascript')}}"></script>
 </body>
 
-</html>
+</html> 
