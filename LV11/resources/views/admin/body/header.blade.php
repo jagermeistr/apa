@@ -13,7 +13,7 @@
                         </div>
                     </form>
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="ms-1 me-1 d-none d-md-inline-block">English</span>
                             </a>
@@ -24,7 +24,7 @@
                                 <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-pt" title="pt" id="pt"></i> <span class="ms-1"> Portuguese </span></a>
                                 <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-es" title="es" id="es"></i> <span class="ms-1"> Spanish </span></a>
                             </div>
-                        </li>
+                        </li> --> 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i data-feather="grid"></i>
@@ -217,7 +217,7 @@
                                 </div>
                                 <ul class="list-unstyled p-1">
                                     <li class="dropdown-item py-2">
-                                        <a href="pages/general/profile.html" class="text-body ms-0">
+                                        <a href="{{ route('admin.profile') }}" class="text-body ms-0">
                                             <i class="me-2 icon-md" data-feather="user"></i>
                                             <span>Profile</span>
                                         </a>

@@ -14,7 +14,7 @@
         <ul class="nav">
             <li class="nav-item nav-category">Main</li>
             <li class="nav-item">
-                <a href="dashboard.html" class="nav-link">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link">
                     <i class="link-icon" data-feather="box"></i>
                     <span class="link-title">Dashboard</span>
                 </a>
@@ -40,12 +40,12 @@
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="pages/apps/chat.html" class="nav-link">
                     <i class="link-icon" data-feather="message-square"></i>
                     <span class="link-title">Chat</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href="pages/apps/calendar.html" class="nav-link">
                     <i class="link-icon" data-feather="calendar"></i>
@@ -70,7 +70,7 @@
                         <li class="nav-item">
                             <a href="pages/ui-components/badges.html" class="nav-link">Badges</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="pages/ui-components/breadcrumbs.html" class="nav-link">Breadcrumbs</a>
                         </li>
                         <li class="nav-item">
@@ -129,7 +129,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="pages/ui-components/tooltips.html" class="nav-link">Tooltips</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
@@ -147,16 +147,16 @@
                         <li class="nav-item">
                             <a href="pages/advanced-ui/owl-carousel.html" class="nav-link">Owl carousel</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="pages/advanced-ui/sortablejs.html" class="nav-link">SortableJs</a>
                         </li>
                         <li class="nav-item">
                             <a href="pages/advanced-ui/sweet-alert.html" class="nav-link">Sweet Alert</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#forms" role="button" aria-expanded="false" aria-controls="forms">
                     <i class="link-icon" data-feather="inbox"></i>
                     <span class="link-title">Forms</span>
@@ -178,8 +178,8 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#charts" role="button" aria-expanded="false" aria-controls="charts">
                     <i class="link-icon" data-feather="pie-chart"></i>
                     <span class="link-title">Charts</span>
@@ -207,8 +207,8 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button" aria-expanded="false" aria-controls="tables">
                     <i class="link-icon" data-feather="layout"></i>
                     <span class="link-title">Table</span>
@@ -244,8 +244,8 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item nav-category">Pages</li>
+            </li> -->
+            <!-- <li class="nav-item nav-category">Pages</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button" aria-expanded="false" aria-controls="general-pages">
                     <i class="link-icon" data-feather="book"></i>
@@ -274,8 +274,8 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button" aria-expanded="false" aria-controls="authPages">
                     <i class="link-icon" data-feather="unlock"></i>
                     <span class="link-title">Authentication</span>
@@ -291,8 +291,8 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button" aria-expanded="false" aria-controls="errorPages">
                     <i class="link-icon" data-feather="cloud-off"></i>
                     <span class="link-title">Error</span>
@@ -308,10 +308,10 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> -->
             <li class="nav-item nav-category">Docs</li>
             <li class="nav-item">
-                <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank" class="nav-link">
+                <a href="#" target="_blank" class="nav-link">
                     <i class="link-icon" data-feather="hash"></i>
                     <span class="link-title">Documentation</span>
                 </a>
@@ -319,4 +319,3 @@
         </ul>
     </div>
 </nav>
-
