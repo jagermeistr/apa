@@ -36,6 +36,9 @@
     <!-- End layout styles -->
 
     <link rel="shortcut icon" href="{{asset('Backend/assets/images/favicon.png')}}" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 </head>
 
 <body>
@@ -52,7 +55,7 @@
             @yield('admin')
 
             <!-- partial:partials/_footer.html -->
-           @include('admin.body.footer')
+            @include('admin.body.footer')
             <!-- partial -->
 
         </div>
@@ -75,6 +78,34 @@
     <!-- Custom js for this page -->
     <script src="{{asset('Backend/assets/js/dashboard-dark.js')}}"></script>
     <!-- End custom js for this page -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script>
+    var messageType = '{{ Session::get("alert-type", "info") }}';
+    var message = '{{ Session::get("message") }}';
+
+    if (message) {
+        switch (messageType) {
+            case 'info':
+                toastr.info(message);
+                break;
+
+            case 'success':
+                toastr.success(message);
+                break;
+
+            case 'warning':
+                toastr.warning(message);
+                break;
+
+            case 'error':
+                toastr.error(message);
+                break;
+        }
+    }
+</script>
+
 
 </body>
 

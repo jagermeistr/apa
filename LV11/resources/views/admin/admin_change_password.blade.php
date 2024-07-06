@@ -61,37 +61,39 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title">Update Admin Profile</h6>
+                        <h6 class="card-title">Update Admin Password</h6>
 
-                        <form method="POST" action="{{ route('admin.profile.store') }}" class="forms-sample" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('admin.update.password') }}" class="forms-sample" enctype="multipart/form-data">
                             @csrf
+
+
                             <!-- @csrf induces users to perform actions they do not intend to perform -->
                             <!-- enctype="multipart/form-data" is used to upload the image-->
 
+
                             <div class="mb-3">
-                                <label for="exampleInputUsername1" class="form-label">Username</label>
-                                <input type="text" name="username" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> username}}">
-                            </div>
+                                <label for="exampleInputEmail1" class="form-label">Old Password</label>
+                                <input type="password" name="old_password" class="form-control @error('old_password') is invalid @enderror" id="old_password" autocomplete="off">
+                                @error('old_password')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div> 
+                            <!-- requests old password -->
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Name</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> name}}">
-                            </div>
+                                <label for="exampleInputEmail1" class="form-label">New Password</label>
+                                <input type="password" name="new_password" class="form-control @error('new_password') is invalid @enderror" id="new_password" autocomplete="off">
+                                @error('new_password')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div> 
+                            <!-- requests new password -->
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> email}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Phone</label>
-                                <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> phone}}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Photo</label>
-                                <input class="form-control" name="photo" type="file" id="image">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label"></label>
-                                <img id="showImage" class="wd-80 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('input/admin_images'.$profileData->photo):url('input/no_image.jpg') }}" alt="profile picture">
-                            </div>
+                                <label for="exampleInputEmail1" class="form-label">Confirm New Password</label>
+                                <input type="password" name="new_password_confirmation" class="form-control" id="new_password_confirmation" autocomplete="off">
+                                
+                            </div> 
+                            <!-- requests new password confirmation -->
+
 
                             <button type="submit" class="btn btn-primary me-2">Save Changes</button>
 
@@ -108,24 +110,6 @@
     </div>
 
 </div>
-
-<script>
-    //java script to load image on Admin profile
-    $(document).ready(function() //calls function
-        {
-            $('#image').change(function(e) //where we load the image id
-                {
-                    var reader = new FileReader(); //variable
-                    reader.onload = function(e) { //loads another function --(e) means event 
-                        $('#showImage').attr('src',e.target.result); //calls on another id and gives the event target result
-                    }
-                    reader.readAsDataURL(e.target.files['0']); //reads the data and calls the function
-                });
-        });
-</script>
-
-
-
 
 
 
