@@ -4,9 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\PropertyTypeController;
-
-
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +24,24 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return view('user.user_dashboard');
+})->middleware(['auth', 'verified'])->name('user.dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::patch('/dashboard', [ProfileController::class, 'UserProfile'])->name('user.profile');
+Route::middleware(['auth','role:user'])->group(function () {
+    Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
+    Route::get('/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+    Route::get('/user/profile', [UserController::class, 'UserProfile'])->name('user.profile');
+    Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+    Route::get('/user/change/password', [UserController::class, 'UserChangePassword'])->name('user.change.password');
+    Route::post('/user/update/password', [UserController::class, 'UserUpdatePassword'])->name('user.update.password');
+    Route::get('/user/records', [UserController::class, 'UserRecords'])->name('user.records');
+    
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//     Route::patch('/dashboard', [ProfileController::class, 'UserProfile'])->name('user.profile');
 
 });
 

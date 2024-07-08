@@ -13,10 +13,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(UsersTableSeeder::class);
-        \App\Models\User::factory(5)->create();
+        \App\Models\User::factory(10)->create();
 
         $this->call(PluckerSeeder::class);
-        \App\Models\PluckerDetails::factory(5)->create();
+        \App\Models\PluckerDetails::factory(7)->create();
+
+
+        $this->call(FarmerSeeder::class);
+        \App\Models\FarmerDetails::factory(7)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

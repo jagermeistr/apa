@@ -13,13 +13,7 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    public function UserProfile(){
-        $id = Auth::user()->id;
-
-        $profileData= User::find($id);
-
-        return view('agent.agent_profile_view', compact('profileData'));
-    }
+    
     /**
      * Display the user's profile form.
      */
