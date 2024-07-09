@@ -33,8 +33,8 @@
                         <p class="text-muted">{{ $profileData -> phone }}</p>
                     </div>
                     <div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Age:</label>
-                        <p class="text-muted">{{ $profileData -> name }}</p>
+                        <label class="tx-11 fw-bolder mb-0 text-uppercase">National ID:</label>
+                        <p class="text-muted">{{ $profileData -> national_id }}</p>
                     </div>
                     <!-- <<div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Website:</label>

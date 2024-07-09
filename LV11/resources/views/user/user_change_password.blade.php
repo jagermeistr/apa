@@ -32,10 +32,10 @@
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Phone:</label>
                         <p class="text-muted">{{ $profileData -> phone }}</p>
                     </div>
-                    <div class="mt-3">
+                    <!-- <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Age:</label>
                         <p class="text-muted">{{ $profileData -> name }}</p>
-                    </div>
+                    </div> -->
                     <!-- <<div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Website:</label>
                         <p class="text-muted">www.nobleui.com</p>

@@ -17,7 +17,7 @@
 
     @php
     $id = Auth::User()->id;
-    $recordData= App\Models\PluckerDetails::find($id);
+    $profileData= App\Models\User::find($id);
     // <!-- Updates the header area with the info from profile -->
     @endphp
     <div class="row profile-body">
@@ -29,25 +29,25 @@
 
                         <div>
                             <img class="wd-80 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('input/admin_images'.$profileData->photo):url('input/no_image.jpg') }}" alt="profile">
-                            <span class="h4 ms-3 ">{{ $recordData -> name }}</span>
+                            <span class="h4 ms-3 ">{{ $profileData -> name }}</span>
                         </div>
 
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Farm:</label>
-                        <p class="text-muted">{{ $recordData -> farm }}</p>
+                        <p class="text-muted">{{ $profileData -> farm }}</p>
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Phone:</label>
-                        <p class="text-muted">{{ $recordData -> phone }}</p>
+                        <p class="text-muted">{{ $profileData -> phone }}</p>
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">latest Weight:</label>
-                        <p class="text-muted">{{ $recordData -> weight_collected }}</p>
+                        <p class="text-muted">{{ $profileData -> weight_collected }}</p>
                     </div>
                     <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Date:</label>
-                        <p class="text-muted">{{ $recordData -> updated_at }}</p>
+                        <p class="text-muted">{{ $profileData -> updated_at }}</p>
                     </div>
                     <!-- <div class="mt-3">
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Total Weight:</label>
@@ -79,14 +79,14 @@
                 </div>
             </div>
         </div>
-        <!-- left wrapper end -->
-        <!-- middle wrapper start -->
-
-        <!-- middle wrapper end -->
-        <!-- right wrapper start -->
-
-        <!-- right wrapper end -->
-    </div>
+        
+                    <p>Name: {{ $user->name }}</p>
+                    <p>Email: {{ $user->email }}</p>
+                    <form action="{{ route('termination.request') }}" method="POST">
+                        @csrf
+                        <button type="submit">Request Payment</button>
+                    </form>
+    </div> 
 
 
 </div>

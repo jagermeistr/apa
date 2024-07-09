@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TerminateUserController;
+
+use App\Http\Controllers\AgentUserController;
+
 use App\Http\Controllers\Backend\PropertyTypeController;
 use App\Models\User;
 
@@ -73,3 +77,13 @@ Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassw
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 
 Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login');
+
+Route::get('/agent/users/search', [AgentUserController::class, 'AgentUserSearch'])->name('agent.users.search');;
+Route::post('/agent/users/update', [AgentUserController::class, 'AgentUserUpdate'])->name('agent.users.update');;
+
+// Define a route for the "Request Termination" button
+Route::post('/termination/request',[TerminateUserController::class, 'requestTermination'])->name('termination.request');
+// Define a route for the user profile page
+Route::get('/terminate-user', [TerminateUserController::class, 'showUserProfile']);
+// In your routes file
+Route::get('/admin/users/{user}/profile', [AdminController::class,'showUserProfile'])->name('admin.users.profile');

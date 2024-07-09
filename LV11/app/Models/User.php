@@ -17,11 +17,18 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded = [
-    
-    ];
+    protected $guarded = [];
+    public function pluckerDetails()
+    {
+        return $this->hasOne(PluckerDetails::class, 'name', 'id');
+    }
 
+    public function show(User $user)
+    {
+        return view('user.profile', ['user' => $user]);
+    }
     /**
+     * 
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>

@@ -13,6 +13,8 @@ class AgentController extends Controller
     public function AgentDashboard(){
         return view('agent.index');
     }
+    
+
     public function AgentLogout(Request $request){
         Auth::guard('web')->logout();
 

@@ -39,14 +39,7 @@ class UserController extends Controller
 
         return view('user.user_profile_view', compact('profileData'));
     }
-    public function UserRecords()
-    {
-        $id = Auth::user()->id;
-
-        $recordData = PluckerDetails::find($id);
-
-        return view('user.user_records', compact('recordData'));
-    }
+    
     public function UserProfileStore(Request $request)
     {
         $id = Auth::user()->id;
