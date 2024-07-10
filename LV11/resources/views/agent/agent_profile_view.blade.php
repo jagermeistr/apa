@@ -36,21 +36,12 @@
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">National ID:</label>
                         <p class="text-muted">{{ $profileData -> national_id }}</p>
                     </div>
-                    <!-- <<div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Website:</label>
-                        <p class="text-muted">www.nobleui.com</p>
+                    <!-- <div class="mt-3">
+                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Farm_owned:</label>
+                        <p class="text-muted">{{ $profileData -> farm }}</p>
                     </div> -->
-                    <!-- <div class="mt-3 d-flex social-links">
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="github"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="instagram"></i>
-                    </a>
-                </div> -->
+
+                    
                 </div>
             </div>
         </div>
@@ -84,6 +75,14 @@
                                 <label for="exampleInputEmail1" class="form-label">Phone</label>
                                 <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> phone}}">
                             </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">National_ID</label>
+                                <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> national_id}}">
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Farm Owned</label>
+                                <input type="text" name="farm" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> farm}}">
+                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Photo</label>
                                 <input class="form-control" name="photo" type="file" id="image">

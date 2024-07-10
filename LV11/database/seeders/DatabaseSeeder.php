@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call(FarmerSeeder::class);
         \App\Models\FarmerDetails::factory(7)->create();
 
+        // $this->call(Collection_centreSeeder::class);
+        // \App\Models\CollectionCentre::factory(7)->create();
+
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

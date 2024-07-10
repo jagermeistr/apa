@@ -3,8 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Backend\RoleController;
+
 use App\Http\Controllers\TerminateUserController;
 
 use App\Http\Controllers\AgentUserController;
@@ -53,6 +56,7 @@ require __DIR__.'/auth.php';
 //admin grp middleware
 Route::middleware(['auth','role:admin'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+Route::get('/agent/payment', [AdminController::class, 'AdminPayment'])->name('admin.payment');
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
 Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
@@ -87,3 +91,18 @@ Route::post('/termination/request',[TerminateUserController::class, 'requestTerm
 Route::get('/terminate-user', [TerminateUserController::class, 'showUserProfile']);
 // In your routes file
 Route::get('/admin/users/{user}/profile', [AdminController::class,'showUserProfile'])->name('admin.users.profile');
+
+//For Payment section
+Route::post('/payment/callback', [PaymentController::class, 'handleGatewayCallback'])->name('payment.callback');
+
+
+
+//Permision all route
+Route::controller(RoleController::class)->group(function(){
+    Route::get('/all/permission', 'AllPermission')->name('all.permission');
+    Route::get('/add/permission', 'AddPermission')->name('add.permission');
+    Route::get('/store/permission', 'StorePermission')->name('store.permission');
+    Route::get('/edit/permission/{id}', 'EditPermission')->name('edit.permission');
+
+
+});

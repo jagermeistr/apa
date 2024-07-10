@@ -14,17 +14,17 @@ class PluckerSeeder extends Seeder
      */
     public function run(): void
     {
-        // DB::table('plucker_details')->insert([
-        //     //Plucker
-        //     [
-        //         'name'=>'Johnstone Mathenge',
-        //         'farm'=>'Matheke Farm',
-        //         'Phone'=>'0722484151',
-        //         'weight_collected'=>'50Kgs',
+        DB::table('plucker_details')->insert([
+            //Plucker
+            [
+                'name'=>'Johnstone Mathenge',
+                'farm'=>'Matheke Farm',
+                'Phone'=>'0722484151',
+                'weight_collected'=>'50Kgs',
                 
-        //     ],
+            ],
            
-        // ])    ;
+        ])    ;
         
     }
 }

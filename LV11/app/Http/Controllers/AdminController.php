@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CollectionCentre;
+use App\Models\CollectionCentres;
+use App\Models\CollectionDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -16,6 +19,10 @@ class AdminController extends Controller
         return view('admin.index');
     }
     //end method
+    public function AdminPayment()
+    {
+        return view('admin.admin_payment');
+    }
 
     public function AdminLogout(Request $request)
     {
@@ -106,9 +113,15 @@ class AdminController extends Controller
     {
         return view('admin.user-profile', ['user' => $user]);
     }
+    
     public function index()
     {
-        $users = User::all();
-        return view('admin.index', compact('users'));
+        $userCount = User::count();
+        return view('admin.dashboard', compact('userCount'));
     }
+    // public function CollectionCentre()
+    // {
+    //     $CollectionCount = CollectionCentres::count();
+    //     return view('admin.dashboard', compact('CollectionCount'));
+    // }
 }

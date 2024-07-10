@@ -36,21 +36,8 @@
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">National_id:</label>
                         <p class="text-muted">{{ $profileData -> national_id }}</p>
                     </div>
-                    <!-- <<div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Website:</label>
-                        <p class="text-muted">www.nobleui.com</p>
-                    </div> -->
-                    <!-- <div class="mt-3 d-flex social-links">
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="github"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="instagram"></i>
-                    </a>
-                </div> -->
+                    
+                    
                 </div>
             </div>
         </div>
@@ -83,6 +70,10 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Phone</label>
                                 <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> phone}}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">National_id</label>
+                                <input type="text" name="national_id" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> national_id}}">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Photo</label>

@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('property_types', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->string('type_name');
-            $table->string('type_icon')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('reference');
+            $table->decimal('amount', 10, 2);
+            $table->string('channel');
+            $table->datetime('payment_date');
+            $table->string('payment_status');
             $table->timestamps();
         });
     }
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('property_types');
+        Schema::dropIfExists('payments');
     }
 };

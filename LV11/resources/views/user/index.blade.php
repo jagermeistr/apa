@@ -49,44 +49,17 @@
                         <label class="tx-11 fw-bolder mb-0 text-uppercase">Date:</label>
                         <p class="text-muted">{{ $profileData -> updated_at }}</p>
                     </div>
-                    <!-- <div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Total Weight:</label>
-                        <p class="text-muted">
-                            @php
-                            $total_weight = App\Models\PluckerDetails::where('id', Auth::User()->id)
-                            ->groupBy('id')
-                            ->sum('weight_collected');
-                            @endphp
-                            {{ $total_weight }} kg
-                        </p>
-                    </div> -->
+                    
 
-                    <!-- <<div class="mt-3">
-                        <label class="tx-11 fw-bolder mb-0 text-uppercase">Website:</label>
-                        <p class="text-muted">www.nobleui.com</p>
-                    </div> -->
-                    <!-- <div class="mt-3 d-flex social-links">
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="github"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="twitter"></i>
-                        </a>
-                        <a href="javascript:;" class="btn btn-icon border btn-xs me-2">
-                            <i data-feather="instagram"></i>
-                    </a>
-                </div> -->
+                   
                 </div>
+                <form action="{{ route('termination.request') }}" method="POST">
+                @csrf
+                <button type="submit">Request Payment</button>
             </div>
+            </form>
         </div>
-        
-                    <p>Name: {{ $user->name }}</p>
-                    <p>Email: {{ $user->email }}</p>
-                    <form action="{{ route('termination.request') }}" method="POST">
-                        @csrf
-                        <button type="submit">Request Payment</button>
-                    </form>
-    </div> 
+    </div>
 
 
 </div>

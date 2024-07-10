@@ -85,6 +85,10 @@
                                 <input type="text" name="phone" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> phone}}">
                             </div>
                             <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">National ID</label>
+                                <input type="email" name="email" class="form-control" id="exampleInputUsername1" autocomplete="off" value="{{$profileData-> national_id}}">
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Photo</label>
                                 <input class="form-control" name="photo" type="file" id="image">
                             </div>
