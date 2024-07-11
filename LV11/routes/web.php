@@ -12,6 +12,7 @@ use App\Http\Controllers\TerminateUserController;
 
 use App\Http\Controllers\AgentUserController;
 use App\Http\Controllers\Backend\PluckerDetailsController;
+use App\Http\Controllers\Backend\CollectionCenterController;
 
 use App\Http\Controllers\Backend\FarmerDetailsController;
 use App\Models\FarmerDetails;
@@ -155,4 +156,16 @@ Route::controller(PluckerDetailsController::class)->group(function(){
     Route::get('/delete/plucker/{id}', 'DeletePlucker')->name('delete.plucker');
 
 });
+
+Route::controller(CollectionCenterController::class)->group(function(){
+
+    Route::get('/all/collections', 'AllCollection')->name('all.collection.centers');
+    Route::get('/add/collections', 'AddCollection')->name('add.collection.centers');
+    Route::post('/store/collections', 'StoreCollection')->name('store.collection.centers');
+    Route::get('/update/collections', 'UpdateCollection')->name('update.collection.centers');
+    Route::get('/edit/collections/{id}', 'EditCollection')->name('edit.collection.centers');
+    Route::get('/delete/collections/{id}', 'DeleteCollection')->name('delete.collection.centers');
+
+});
+
 

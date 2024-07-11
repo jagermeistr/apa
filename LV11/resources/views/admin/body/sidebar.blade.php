@@ -61,10 +61,10 @@
                 <div class="collapse" id="emails">
                     <ul class="nav sub-menu">
                         <li class="nav-item">
-                            <a href="{{route('all.permissions')}}" class="nav-link">All Collection Center</a>
+                            <a href="{{route('all.collection.centers')}}" class="nav-link">All Collection Center</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('all.roles')}}" class="nav-link">Add Collection Centre</a>
+                            <a href="{{route('add.collection.centers')}}" class="nav-link">Add Collection Centre</a>
                         </li>
                         
                     </ul>
