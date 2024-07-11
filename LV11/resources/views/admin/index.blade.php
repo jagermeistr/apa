@@ -18,39 +18,25 @@
         @php
         $id = Auth::User()->id;
         $profileData= App\Models\User::find($id);
-        $userCount=App\Models\User::count()
+        $userCount=App\Models\User::count();
+        $collectionCount = App\Models\CollectionCentre::getCount();
         @endphp
 
         <div class="container">
-            <div class=" justify-content-left">
+            <div class="row">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">Database:users</div>
-
                         <div class="card-body">
                             <h5>Number of Users: {{ $userCount }}</h5>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-    </div>
-    <div class="row profile-body">
-        <div class="container">
-            <div class=" justify-content-center">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">Database:Collection Centre</div>
                         <div class="card-body">
+                            <h5>Collection Centers: {{ $collectionCount }}</h5>
                         </div>
                     </div>
                 </div>
@@ -59,5 +45,7 @@
 
     </div>
 
-</div>
-@endsection
+
+
+    
+    @endsection

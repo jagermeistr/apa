@@ -62,6 +62,8 @@ Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('ad
 Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
 Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+Route::get('/admin/weight', [AdminController::class, 'AdminWeight'])->name('admin.weight');
+
 
 
 }); //end grp admin middleware
@@ -97,12 +99,26 @@ Route::post('/payment/callback', [PaymentController::class, 'handleGatewayCallba
 
 
 
-//Permision all route
+//Permision routes
 Route::controller(RoleController::class)->group(function(){
-    Route::get('/all/permission', 'AllPermission')->name('all.permission');
+    Route::get('/all/permission', 'AllPermission')->name('all.permissions');
     Route::get('/add/permission', 'AddPermission')->name('add.permission');
-    Route::get('/store/permission', 'StorePermission')->name('store.permission');
+    Route::post('/store/permission', 'StorePermission')->name('store.permission');
+    Route::get('/update/permission', 'UpdatePermission')->name('update.permission');
     Route::get('/edit/permission/{id}', 'EditPermission')->name('edit.permission');
+    Route::get('/delete/permission/{id}', 'DeletePermission')->name('delete.permission');
+
+    Route::get('/import/permission', 'ImportPermission')->name('import.permission');
+    Route::get('/export', 'Export')->name('export');
+    Route::post('/import', 'Import')->name('import');
+});
+
+//Role routes
+Route::controller(RoleController::class)->group(function(){
+    Route::get('/all/roles', 'AllRoles')->name('all.roles');
+    Route::get('/add/roles', 'AddRoles')->name('add.roles');
+    Route::post('/store/roles', 'StoreRoles')->name('store.roles');
 
 
+ 
 });

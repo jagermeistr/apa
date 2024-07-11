@@ -10,24 +10,23 @@
         <div class="d-none d-md-block col-md-8 col-xl-8 middle-wrapper">
             <div class="card rounded">
                 <div class="card-body">
-                    <h6 class="card-title"> Add Permission</h6>
-                    <form id="my Form" action="{{route('store.permission')}}" method="POST" class="forms-sample">
+                    <h6 class="card-title"> Add Roles</h6>
+                    <form id="my Form" method="POST" action="{{route('store.roles')}}"  class="forms-sample">
                         @csrf
-                        <input type="hidden" name="id" value="{{$permission->id}}">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Permission Name</label>
-                            <input type="text" name="name" class="form-control" value="{{$permission->name}}">
+                            <label for="exampleInputEmail1" class="form-label">Role Name</label>
+                            <input type="text" name="name" class="form-control">
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-3">
                                 <label class="form-label">Group Name</label>
                                 <select name="group_name" class="form-select" id="exampleInputUsername1">
                                     <option selected="" disabled="">Select Group Name</option>
-                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>For Rent</option>
-                                    <!-- <option value="buy"{{$permission->group_name == 'type'?'selected':''}}>For buy</option> THIS IS HOW THE EXAMPLE WILL LOOK-->
-
+                                    <option value="rent">For Rent</option>
+                                    <option value="buy">For buy</option>
 
                                 </select>
+                                
                             </div>
                             <button type="Submit" class="btn btn-primary me-2">Save Changes</button>
 

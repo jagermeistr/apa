@@ -11,7 +11,7 @@
             <div class="card rounded">
                 <div class="card-body">
                     <h6 class="card-title"> Add Permission</h6>
-                    <form id="my Form" action="{{route('store.permission')}}" method="POST" class="forms-sample">
+                    <form id="my Form" method="POST" action="{{route('store.permission')}}"  class="forms-sample">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Permission Name</label>
@@ -26,7 +26,10 @@
                                     <option value="buy">For buy</option>
 
                                 </select>
+                                
                             </div>
+                            <button type="Submit" class="btn btn-primary me-2">Save Changes</button>
+
                         </div>
                     </form>
                 </div>

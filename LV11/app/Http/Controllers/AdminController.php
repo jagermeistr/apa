@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\CollectionCentre;
-use App\Models\CollectionCentres;
-use App\Models\CollectionDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -38,6 +36,10 @@ class AdminController extends Controller
     public function AdminLogin()
     {
         return view('admin.admin_login');
+    }
+    public function AdminWeight()
+    {
+        return view('admin.admin_weight');
     }
 
     public function AdminProfile()
@@ -119,9 +121,9 @@ class AdminController extends Controller
         $userCount = User::count();
         return view('admin.dashboard', compact('userCount'));
     }
-    // public function CollectionCentre()
-    // {
-    //     $CollectionCount = CollectionCentres::count();
-    //     return view('admin.dashboard', compact('CollectionCount'));
-    // }
+    public function CollectionCentre()
+    {
+        $CollectionCount = CollectionCentre::count();
+        return view('admin.dashboard', compact('CollectionCount'));
+    }
 }
