@@ -33,10 +33,24 @@ class AdminController extends Controller
         return redirect('/admin/login');
     }
 
-    public function AdminLogin()
+    public function AdminLogin(Request $request)
     {
-        return view('admin.admin_login');
+        $credentials = $request->only(['login', 'password']);
+        if (Auth::attempt($credentials)) {
+            $notification = array(
+                'message' => 'Login Successfull',
+                'alert-type' => 'success'
+            );
+            return view('admin.admin_login')->with($notification);
+        } else {
+            $notification = array(
+                'message' => 'Invalid Email or Password',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
+        }
     }
+    //end method
     public function AdminWeight()
     {
         return view('admin.admin_weight');

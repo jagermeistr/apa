@@ -10,16 +10,16 @@
         <div class="d-none d-md-block col-md-8 col-xl-8 middle-wrapper">
             <div class="card rounded">
                 <div class="card-body">
-                    <h6 class="card-title"> Add Roles</h6>
-                    <form id="my Form" method="POST" action="{{route('store.roles')}}"  class="forms-sample">
+                    <h6 class="card-title"> Edit Roles</h6>
+                    <form id="my Form" method="POST" action="{{route('update.roles')}}"  class="forms-sample">
                         @csrf
+                        <input type="hidden" name="id" class="form-control" value="{{$roles->id}}">
+
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Role Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" class="form-control" value="{{$roles->name}}">
                         </div>
-                        <div class="col-sm-6">
-                                
-                             
+                        
                             <button type="Submit" class="btn btn-primary me-2">Save Changes</button>
 
                         </div>

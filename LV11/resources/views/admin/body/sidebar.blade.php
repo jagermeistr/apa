@@ -32,6 +32,83 @@
                     <span class="link-title">Payments</span>
                 </a>
             </li>
+            <li class="nav-item nav-category">Payment Records</li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Salary</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="emails">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{route('all.permissions')}}" class="nav-link">All Payments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('all.roles')}}" class="nav-link">Add Payment</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item nav-category">Collection centres</li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Manage collection centres</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="emails">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{route('all.permissions')}}" class="nav-link">All Collection Center</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('all.roles')}}" class="nav-link">Add Collection Centre</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item nav-category">Farmer </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#bin" role="button" aria-expanded="false" aria-controls="bin">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Manage Farmer</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="emails">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{route('all.farmers')}}" class="nav-link">All Farmers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('add.farmer')}}" class="nav-link">Add Collection Centre</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item nav-category">Plucker </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="box"></i>
+                    <span class="link-title">Manage Plucker</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                </a>
+                <div class="collapse" id="emails">
+                    <ul class="nav sub-menu">
+                        <li class="nav-item">
+                            <a href="{{route('all.pluckers')}}" class="nav-link">All Pluckers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('add.plucker')}}" class="nav-link">Add Plucker</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+            
             <li class="nav-item nav-category">Roles & permissions</li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
@@ -48,7 +125,7 @@
                             <a href="{{route('all.roles')}}" class="nav-link">All Roles</a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/email/compose.html" class="nav-link">Compose</a>
+                            <a href="{{route ('add.roles.permission')}}" class="nav-link">Role in Permission</a>
                         </li>
                     </ul>
                 </div>

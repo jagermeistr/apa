@@ -5,7 +5,7 @@
 
   <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.roles')}}" class="btn btn-inverse-info">Add Roles</a>
+      <a href="{{ route('add.farmer')}}" class="btn btn-inverse-info">Add Plucker</a>
       
     </ol>
   </nav>
@@ -14,25 +14,32 @@
     <div class="col-md-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
-          <h6 class="card-title">Roles All</h6>
+          <h6 class="card-title">All pluckers</h6>
 
           <div class="table-responsive">
             <table id="dataTableExample" class="table">
               <thead>
                 <tr>
                   <th>S1</th>
-                  <th>Roles Name</th>
+                  <th>Plucker Name</th>
+                  <th>Farm Name</th>
+                  <th>Phone Number</th>
+                  <th>weight Collected</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach($roles as $key => $item)
+                @foreach($pluckers as $key => $item)
                 <tr>
                   <td> {{ $key+1}}</td> 
-                  <td> {{$item->name}}</td> 
+                  <td> {{$item->name}}</td>
+                  <td> {{$item->farm}}</td>
+                  <td> {{$item->phone}}</td> 
+                  <td> {{$item->weight_collected}}</td>
+
                   <td>
-                    <a href="{{ route('edit.roles',$item->id)}}" class="btn btn-inverse-warning">Edit</a>
-                    <a href="{{ route('delete.roles',$item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
+                    <a href="{{ route('edit.plucker',$item->id)}}" class="btn btn-inverse-warning">Edit</a>
+                    <a href="{{ route('delete.plucker',$item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
                   </td>
                   @endforeach
                 </tr>

@@ -11,8 +11,10 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\TerminateUserController;
 
 use App\Http\Controllers\AgentUserController;
+use App\Http\Controllers\Backend\PluckerDetailsController;
 
-use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\FarmerDetailsController;
+use App\Models\FarmerDetails;
 use App\Models\User;
 
 /*
@@ -118,7 +120,39 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/all/roles', 'AllRoles')->name('all.roles');
     Route::get('/add/roles', 'AddRoles')->name('add.roles');
     Route::post('/store/roles', 'StoreRoles')->name('store.roles');
+    Route::get('/edit/roles/{id}', 'EditRoles')->name('edit.roles');
+    Route::get('/update/roles', 'UpdateRoles')->name('update.roles');
+    Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
 
+    Route::get('/add/roles/permission', 'AddRolesPermission')->name('add.roles.permission');
+    Route::get('/add/roles', 'AddRoles')->name('add.roles');
+    Route::post('/store/roles', 'StoreRoles')->name('store.roles');
+    Route::get('/edit/roles/{id}', 'EditRoles')->name('edit.roles');
+    Route::get('/update/roles', 'UpdateRoles')->name('update.roles');
+    Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
 
  
 });
+
+Route::controller(FarmerDetailsController::class)->group(function(){
+
+    Route::get('/all/farmers', 'AllFarmers')->name('all.farmers');
+    Route::get('/add/farmer', 'AddFarmer')->name('add.farmer');
+    Route::post('/store/farmer', 'StoreFarmer')->name('store.farmer');
+    Route::get('/update/farmer', 'UpdateFarmer')->name('update.farmer');
+    Route::get('/edit/farmer/{id}', 'EditFarmer')->name('edit.farmer');
+    Route::get('/delete/farmer/{id}', 'DeleteFarmer')->name('delete.farmer');
+
+});
+
+Route::controller(PluckerDetailsController::class)->group(function(){
+
+    Route::get('/all/pluckers', 'AllPluckers')->name('all.pluckers');
+    Route::get('/add/plucker', 'AddPlucker')->name('add.plucker');
+    Route::post('/store/plucker', 'StorePlucker')->name('store.plucker');
+    Route::get('/update/plucker', 'UpdatePlucker')->name('update.plucker');
+    Route::get('/edit/plucker/{id}', 'EditPlucker')->name('edit.plucker');
+    Route::get('/delete/plucker/{id}', 'DeletePlucker')->name('delete.plucker');
+
+});
+

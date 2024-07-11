@@ -26,9 +26,25 @@ class UserController extends Controller
 
         return redirect('/login');
     }
-    public function UserLogin()
+    public function UserLogin(Request $request)
     {
-        return view('user.user_login');
+        $credentials = $request->only(['login', 'password']);
+
+        if (Auth::attempt($credentials)) {
+            $notification = array(
+                'message' => 'Login Successfull',
+                'alert-type' => 'success'
+            );
+            return view('user.user_login')->with($notification);
+        } else {
+            $notification = array(
+                'message' => 'Invalid Email or Password',
+                'alert-type' => 'error'
+            );
+            return redirect()->back()->with($notification);
+        }
+        
+
     }
 
     public function UserProfile()

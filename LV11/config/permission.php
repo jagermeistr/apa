@@ -3,14 +3,7 @@
 return [
 
 
-    'roles' => [
-        'Agent' => [
-            'permissions' => ['update-user-data'],
-        ],
-        'User' => [
-            'permissions' => ['view-own-data'],
-        ],
-    ],
+   
     
     'models' => [
 

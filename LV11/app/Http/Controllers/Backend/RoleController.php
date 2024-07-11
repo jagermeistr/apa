@@ -8,6 +8,8 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Exports\PermissionExport;
 use App\Imports\PermissionImport;
+use App\Models\User;
+
 
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -96,6 +98,42 @@ class RoleController extends Controller
         );
            return redirect()->route('all.roles')->with($notification);
     }
+    public function EditRoles($id){
+        $roles= Role::findorFail($id);
+        return view('Backend.type.pages.roles.edit_roles',compact('roles'));
+    }
+    public function UpdateRoles(Request $request, $id)
+    {
+        $role_id = $request->id;
+        Role::findorFail($role_id)->update([
+            'name' => $request->name,
+        ]);
+
+        $notification = array(
+            'message' => 'Role Updated Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.permissions')->with($notification);
+    }
+    public function DeleteRoles($id){
+        Role::findorFail($id)->delete();
+        $notification = array(
+         'message'=>'Permission Deleted Successfully',
+         'alert-type' => 'success'
+      );
+      return redirect()->back()->with($notification);    
+     }
+
+     //ROLES PERMISSION SECTION
+
+     public function AddRolesPermission(){
+
+        $roles=Role::all();
+        $permissions=Permission::all();
+        $permissions_groups= User::getpermissionGroups();
+        return view('Backend.type.pages.rolesetup.add_roles_permission',compact('roles','permissions','permissions_groups'));
+    }
+ 
     
 
 }
