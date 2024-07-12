@@ -22,8 +22,12 @@
                                 <label class="form-label">Group Name</label>
                                 <select name="group_name" class="form-select" id="exampleInputUsername1">
                                     <option selected="" disabled="">Select Group Name</option>
-                                    <option value="rent">For Rent</option>
-                                    <option value="buy">For buy</option>
+                                    <option value="collection">Collection Center</option>
+                                    <option value="Farmer">Farmer</option>
+                                    <option value="Plucker">Plucker</option>
+                                    <option value="Role">Role and Permission</option>
+
+
 
                                 </select>
                                 

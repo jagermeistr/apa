@@ -11,14 +11,20 @@ class FarmerDetailsController extends Controller
 {
     //
     public function AllFarmers(){
-        $farmers = FarmerDetails::all();
+        $farmers = FarmerDetails::latest()->get();
         return view('Backend.type.pages.farmers.all_farmers',compact('farmers'));
     }
     public function AddFarmer(){
         return view('Backend.type.pages.farmers.add_farmers');
     }
     public function StoreFarmer(Request $request){
-        FarmerDetails::create([
+        $request->validate([
+            'name' => 'required|unique:farmer_details|max:200',
+            'farm' => 'required|string',
+            'phone' => 'required|string',
+            'weight_collected' => 'required|string',
+        ]);
+        FarmerDetails::insert([
             'name' => $request ->name,
             'farm' => $request ->farm,
             'phone' => $request ->phone,
@@ -30,21 +36,23 @@ class FarmerDetailsController extends Controller
             'message'=>'Role Create Successfully',
             'alert-type' => 'success'
         );
-           return redirect()->route('all.roles')->with($notification);
+           return redirect()->route('all.farmers')->with($notification);
     }
     public function EditFarmer($id){
         $farmers= FarmerDetails::findorFail($id);
         return view('Backend.type.pages.farmers.edit_farmers',compact('farmers'));
     }
-    public function UpdateFarmer(Request $request, $id)
+    public function UpdateFarmer(Request $request)
     {
-        $farmer_id = $request->id;
-        FarmerDetails::findorFail($farmer_id)->update([
+        $collections = $request->id;
+        FarmerDetails::findorFail($collections)->update([
+           
             'name' => $request ->name,
             'farm' => $request ->farm,
             'phone' => $request ->phone,
             'weight_collected' => $request ->weight_collected,
         ]);
+        
 
         $notification = array(
             'message' => 'Farmer Updated Successfully',

@@ -5,7 +5,7 @@
 
   <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.collection.centers')}}" class="btn btn-inverse-info">Add Collection Center</a>
+      <a href="{{ route('add.collections')}}" class="btn btn-inverse-info">Add Collection Center</a>
       
     </ol>
   </nav>
@@ -34,8 +34,8 @@
                   <td> {{$item->collection_centre_address}}</td>
 
                   <td>
-                    <a href="{{ route('edit.collection.centers',$item->id)}}" class="btn btn-inverse-warning">Edit</a>
-                    <a href="{{ route('delete.collection.centers',$item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
+                    <a href="{{ route('edit.collections',$item->id)}}" class="btn btn-inverse-warning">Edit</a>
+                    <a href="{{ route('delete.collections',$item->id)}}" class="btn btn-inverse-danger" id="delete">Delete</a>
                   </td>
                   @endforeach
                 </tr>

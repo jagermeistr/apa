@@ -13,7 +13,7 @@
                     <h6 class="card-title"> Edit Farmer</h6>
                     <form id="my Form" method="POST" action="{{route('update.farmer')}}"  class="forms-sample">
                         @csrf
-                        <input type="hidden" name="id" class="form-control" value="{{$farmer->id}}">
+                        <input type="hidden" name="id" class="form-control" value="{{$farmers->id}}">
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Farmer Name</label>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Farm Name</label>
-                            <input type="text" name="name" class="form-control" value="{{$farmers->farm}}">
+                            <input type="text" name="farm" class="form-control" value="{{$farmers->farm}}">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Phone</label>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Farmer Name</label>
-                            <input type="text" name="phone" class="form-control" value="{{$farmers->weight_collected}}">
+                            <input type="text" name="weight_collected" class="form-control" value="{{$farmers->weight_collected}}">
                         </div>
                         
                             <button type="Submit" class="btn btn-primary me-2">Save Changes</button>

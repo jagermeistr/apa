@@ -17,7 +17,7 @@ class PermissionImport implements ToModel
         return new Permission([
             //
             'name'=> $row[0],
-            'email'=> $row[1]
+            'group_name'=> $row[1]
         ]);
     }
 }

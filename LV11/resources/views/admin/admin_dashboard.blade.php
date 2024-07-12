@@ -61,6 +61,11 @@
         </div>
     </div>
 
+
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{asset('Backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css')}}">
+    <!-- End plugin css for this page -->
+
     <!-- core:js -->
     <script src="{{asset('Backend/assets/vendors/core/core.js')}}"></script>
     <!-- endinject -->
@@ -82,29 +87,42 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <script>
-    var messageType = '{{ Session::get("alert-type", "info") }}';
-    var message = '{{ Session::get("message") }}';
+        var messageType = '{{ Session::get("alert-type", "info") }}';
+        var message = '{{ Session::get("message") }}';
 
-    if (message) {
-        switch (messageType) {
-            case 'info':
-                toastr.info(message);
-                break;
+        if (message) {
+            switch (messageType) {
+                case 'info':
+                    toastr.info(message);
+                    break;
 
-            case 'success':
-                toastr.success(message);
-                break;
+                case 'success':
+                    toastr.success(message);
+                    break;
 
-            case 'warning':
-                toastr.warning(message);
-                break;
+                case 'warning':
+                    toastr.warning(message);
+                    break;
 
-            case 'error':
-                toastr.error(message);
-                break;
+                case 'error':
+                    toastr.error(message);
+                    break;
+            }
         }
-    }
-</script>
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{{asset('Backend/assets/js/code/code.js')}}"></script>
+
+    <!-- start datatables -->
+    <!-- Plugin js for this page -->
+    <script src="{{asset('Backend/assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('Backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js')}}"></script>
+    <!-- End plugin js for this page -->
+
+    <!-- Custom js for this page -->
+    <script src="{{asset('Backend/assets/js/data-table.js')}}"></script>
+    <!-- End custom js for this page -->
 
 
 </body>

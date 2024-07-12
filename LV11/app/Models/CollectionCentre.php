@@ -12,5 +12,8 @@ class CollectionCentre extends Model
     {
         return self::count();
     }
-
+   
+    protected $guarded=[];
 }
+
+

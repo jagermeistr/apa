@@ -107,7 +107,7 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/all/permission', 'AllPermission')->name('all.permissions');
     Route::get('/add/permission', 'AddPermission')->name('add.permission');
     Route::post('/store/permission', 'StorePermission')->name('store.permission');
-    Route::get('/update/permission', 'UpdatePermission')->name('update.permission');
+    Route::post('/update/permission', 'UpdatePermission')->name('update.permission');
     Route::get('/edit/permission/{id}', 'EditPermission')->name('edit.permission');
     Route::get('/delete/permission/{id}', 'DeletePermission')->name('delete.permission');
 
@@ -122,14 +122,14 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/add/roles', 'AddRoles')->name('add.roles');
     Route::post('/store/roles', 'StoreRoles')->name('store.roles');
     Route::get('/edit/roles/{id}', 'EditRoles')->name('edit.roles');
-    Route::get('/update/roles', 'UpdateRoles')->name('update.roles');
+    Route::post('/update/roles', 'UpdateRoles')->name('update.roles');
     Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
 
     Route::get('/add/roles/permission', 'AddRolesPermission')->name('add.roles.permission');
     Route::get('/add/roles', 'AddRoles')->name('add.roles');
     Route::post('/store/roles', 'StoreRoles')->name('store.roles');
     Route::get('/edit/roles/{id}', 'EditRoles')->name('edit.roles');
-    Route::get('/update/roles', 'UpdateRoles')->name('update.roles');
+    Route::post('/update/roles', 'UpdateRoles')->name('update.roles');
     Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
 
  
@@ -140,7 +140,7 @@ Route::controller(FarmerDetailsController::class)->group(function(){
     Route::get('/all/farmers', 'AllFarmers')->name('all.farmers');
     Route::get('/add/farmer', 'AddFarmer')->name('add.farmer');
     Route::post('/store/farmer', 'StoreFarmer')->name('store.farmer');
-    Route::get('/update/farmer', 'UpdateFarmer')->name('update.farmer');
+    Route::post('/update/farmer', 'UpdateFarmer')->name('update.farmer');
     Route::get('/edit/farmer/{id}', 'EditFarmer')->name('edit.farmer');
     Route::get('/delete/farmer/{id}', 'DeleteFarmer')->name('delete.farmer');
 
@@ -151,7 +151,7 @@ Route::controller(PluckerDetailsController::class)->group(function(){
     Route::get('/all/pluckers', 'AllPluckers')->name('all.pluckers');
     Route::get('/add/plucker', 'AddPlucker')->name('add.plucker');
     Route::post('/store/plucker', 'StorePlucker')->name('store.plucker');
-    Route::get('/update/plucker', 'UpdatePlucker')->name('update.plucker');
+    Route::post('/update/plucker', 'UpdatePlucker')->name('update.plucker');
     Route::get('/edit/plucker/{id}', 'EditPlucker')->name('edit.plucker');
     Route::get('/delete/plucker/{id}', 'DeletePlucker')->name('delete.plucker');
 
@@ -159,12 +159,12 @@ Route::controller(PluckerDetailsController::class)->group(function(){
 
 Route::controller(CollectionCenterController::class)->group(function(){
 
-    Route::get('/all/collections', 'AllCollection')->name('all.collection.centers');
-    Route::get('/add/collections', 'AddCollection')->name('add.collection.centers');
-    Route::post('/store/collections', 'StoreCollection')->name('store.collection.centers');
-    Route::get('/update/collections', 'UpdateCollection')->name('update.collection.centers');
-    Route::get('/edit/collections/{id}', 'EditCollection')->name('edit.collection.centers');
-    Route::get('/delete/collections/{id}', 'DeleteCollection')->name('delete.collection.centers');
+    Route::get('/all/collections', 'AllCollections')->name('all.collections');
+    Route::get('/add/collections', 'AddCollections')->name('add.collections');
+    Route::POST('/store/collections', 'StoreCollections')->name('store.collections');
+    Route::post('/update/collections', 'UpdateCollections')->name('update.collections');
+    Route::get('/edit/collections/{id}', 'EditCollections')->name('edit.collections');
+    Route::get('/delete/collections/{id}', 'DeleteCollections')->name('delete.collections');
 
 });
 

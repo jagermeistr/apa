@@ -11,32 +11,32 @@
             <div class="card rounded">
                 <div class="card-body">
                     <h6 class="card-title"> Add Plucker</h6>
-                    <form id="my Form" method="POST" action="{{route('store.plucker')}}"  class="forms-sample">
+                    <form  method="POST" action="{{route('store.plucker')}}"  class="forms-sample">
                         @csrf
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Plucker Name</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="name" class="form-control @error('name') is invalid @enderror">
                             @error('name')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Farm Name</label>
-                            <input type="text" name="farm" class="form-control">
+                            <input type="text" name="farm" class="form-control @error('farm') is invalid @enderror">
                             @error('farm')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Phone</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="phone" class="form-control @error('phone') is invalid @enderror">
                             @error('phone')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Weight collected</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="weight_collected" class="form-control @error('weight_collected') is invalid @enderror">
                             @error('weight_collected')
                             <span class="text-danger">{{$message}}</span>
                             @enderror

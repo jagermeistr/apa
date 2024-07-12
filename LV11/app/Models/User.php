@@ -18,11 +18,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    
     protected $guarded = [];
-    public function pluckerDetails()
-    {
-        return $this->hasOne(PluckerDetails::class, 'name', 'id');
-    }
+
+    // public function pluckerDetails()
+    // {
+    //     return $this->hasOne(PluckerDetails::class, 'name', 'id');
+    // }
 
     public function show(User $user)
     {

@@ -23,8 +23,13 @@
                                 <label class="form-label">Group Name</label>
                                 <select name="group_name" class="form-select" id="exampleInputUsername1">
                                     <option selected="" disabled="">Select Group Name</option>
-                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>For Rent</option>
-                                    <!-- <option value="buy"{{$permission->group_name == 'type'?'selected':''}}>For buy</option> THIS IS HOW THE EXAMPLE WILL LOOK-->
+                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>Collection Center</option>
+                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>Farmer</option>
+                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>Plucker</option>
+                                    <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}>Role And Permission</option>
+
+                                    <!-- <option value="type"{{$permission->group_name == 'type' ? 'selected':''}}></option> -->
+
 
 
                                 </select>

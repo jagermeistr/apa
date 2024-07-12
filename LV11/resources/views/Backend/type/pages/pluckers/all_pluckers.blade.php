@@ -5,7 +5,7 @@
 
   <nav class="page-breadcrumb">
     <ol class="breadcrumb">
-      <a href="{{ route('add.farmer')}}" class="btn btn-inverse-info">Add Plucker</a>
+      <a href="{{ route('add.plucker')}}" class="btn btn-inverse-info">Add Plucker</a>
       
     </ol>
   </nav>
