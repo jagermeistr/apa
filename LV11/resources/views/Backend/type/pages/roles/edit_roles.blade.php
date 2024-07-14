@@ -17,9 +17,11 @@
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Role Name</label>
-                            <input type="text" name="name" class="form-control" value="{{$roles->name}}">
+                            <input type="text" name="name" class="form-control @error('name') is invalid @enderror" value="{{$roles->name}}">
+                            @error('name')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
-                        
                             <button type="Submit" class="btn btn-primary me-2">Save Changes</button>
 
                         </div>

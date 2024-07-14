@@ -59,6 +59,7 @@ require __DIR__.'/auth.php';
 //admin grp middleware
 Route::middleware(['auth','role:admin'])->group(function () {
 Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 Route::get('/agent/payment', [AdminController::class, 'AdminPayment'])->name('admin.payment');
 Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
 Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
@@ -84,7 +85,6 @@ Route::post('/agent/update/password', [AgentController::class, 'AgentUpdatePassw
 }); //end grp agent middleware
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
-
 Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login');
 
 Route::get('/agent/users/search', [AgentUserController::class, 'AgentUserSearch'])->name('agent.users.search');;
@@ -126,6 +126,12 @@ Route::controller(RoleController::class)->group(function(){
     Route::get('/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
 
     Route::get('/add/roles/permission', 'AddRolesPermission')->name('add.roles.permission');
+    Route::post('/store/roles/permission', 'StoreRolesPermission')->name('store.roles.permission');
+    Route::get('/all/roles/permission', 'AllRolesPermission')->name('all.roles.permission');
+    Route::get('/admin/edit/roles/{id}', 'AdminEditRoles')->name('admin.edit.roles');
+    Route::post('/admin/roles/update/{id}', 'AdminRolesUpdate')->name('admin.roles.update');
+
+
 
 });
 
