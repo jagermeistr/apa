@@ -18,12 +18,12 @@ class FarmerDetailsController extends Controller
         return view('Backend.type.pages.farmers.add_farmers');
     }
     public function StoreFarmer(Request $request){
-        $request->validate([
-            'name' => 'required|unique:farmer_details|max:200',
-            'farm' => 'required|string',
-            'phone' => 'required|string',
-            'weight_collected' => 'required|string',
-        ]);
+        // $request->validate([
+        //     'name' => 'required|farmer_details|max:200',
+        //     'farm' => 'required|string',
+        //     'phone' => 'required|string',
+        //     'weight_collected' => 'required|string',
+        // ]);
         FarmerDetails::insert([
             'name' => $request ->name,
             'farm' => $request ->farm,

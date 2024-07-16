@@ -7,7 +7,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Backend\RoleController;
-
+use App\Http\Controllers\MpesaSTKPUSHController;
 use App\Http\Controllers\TerminateUserController;
 
 use App\Http\Controllers\AgentUserController;
@@ -167,5 +167,10 @@ Route::controller(CollectionCenterController::class)->group(function(){
     Route::get('/delete/collections/{id}', 'DeleteCollections')->name('delete.collections');
 
 });
+
+Route::post('/v1/mpesatest/stk/push', [MpesaSTKPUSHController::class, 'STKPush']);
+// Mpesa STK Push Callback Route
+Route::post('v1/confirm', [MpesaSTKPUSHController::class, 'STKConfirm'])->name('mpesa.confirm');
+
 
 
